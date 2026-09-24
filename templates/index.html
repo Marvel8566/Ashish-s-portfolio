@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ profile.name }} — {{ profile.role }}</title>
+<meta name="description" content="{{ profile.summary }}" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="#top" class="brand">
+      <span class="brand-mark">AG</span>
+      {{ profile.name }}
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="/resume" class="btn btn-outline btn-small">Download resume</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <div>
+      <div class="status-pill" data-reveal="1">
+        <span class="status-dot"></span>
+        {{ profile.available }}
+      </div>
+
+      <h1 data-reveal="2">Reliable cloud operations, automated end to end.</h1>
+
+      <p class="hero-lede" data-reveal="3">
+        {{ profile.summary }}
+      </p>
+
+      <div class="hero-actions" data-reveal="4">
+        <a href="/resume" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download resume
+        </a>
+        <a href="#projects" class="btn btn-outline">View projects</a>
+      </div>
+
+      <div class="social-links" data-reveal="5">
+        <a class="social-link" href="{{ profile.github }}" target="_blank" rel="noopener" aria-label="GitHub profile"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg><span>GitHub</span></a>
+        <a class="social-link" href="{{ profile.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span></a>
+      </div>
+
+      <div class="hero-meta" data-reveal="5">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          {{ profile.location }}
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M12 1v4M12 19v4M4.2 4.2l2.9 2.9M16.9 16.9l2.9 2.9M1 12h4M19 12h4M4.2 19.8l2.9-2.9M16.9 7.1l2.9-2.9"/></svg>
+          AWS Certified DevOps Engineer — Professional
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Remote-friendly, IST hours
+        </span>
+      </div>
+    </div>
+
+    <div class="stat-panel" data-reveal="4">
+      <div class="stat-panel-head">
+        <span>status.log</span>
+        <span class="dots"><span></span><span></span><span></span></span>
+      </div>
+      <div class="stat-grid">
+        {% for s in stats %}
+        <div class="stat-cell">
+          <div class="stat-value mono">{{ s.value }}</div>
+          <div class="stat-label">{{ s.label }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Services</div>
+      <h2>What I help teams with</h2>
+      <p>Hands-on operational work — not just advice. Here's what I take ownership of day to day.</p>
+    </div>
+
+    <div class="service-list">
+      {% for s in services %}
+      <div class="service-row">
+        <div class="service-title">
+          <span class="service-icon">
+            {% if loop.index0 == 0 %}
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            {% elif loop.index0 == 1 %}
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            {% elif loop.index0 == 2 %}
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            {% else %}
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-4"/></svg>
+            {% endif %}
+          </span>
+          {{ s.title }}
+        </div>
+        <p>{{ s.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Track record</div>
+      <h2>{{ experience.headline }}</h2>
+      <p>What that's looked like day to day, in production, on real systems.</p>
+    </div>
+
+    <div class="exp-panel">
+      <div class="exp-head">
+        <span class="exp-tag mono">production log</span>
+      </div>
+      <ul class="exp-log">
+        {% for h in experience.highlights %}
+        <li>{{ h }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Projects</div>
+      <h2>Selected work</h2>
+      <p>Patterns and tooling built for real operational problems, generalized so they're reusable.</p>
+    </div>
+
+    <div class="project-grid">
+      {% for p in projects %}
+      <article class="project-card">
+        <div class="slider" data-slider aria-roledescription="carousel" aria-label="{{ p.title }} previews">
+          <div class="slides">
+            {% for img in p.images %}
+            <img class="slide{% if loop.first %} is-active{% endif %}" src="{{ url_for('static', filename=img) }}" alt="{{ p.title }} preview {{ loop.index }} of {{ loop.length }}" {% if not loop.first %}loading="lazy"{% endif %} draggable="false">
+            {% endfor %}
+          </div>
+          <div class="slider-ui">
+            <span class="slider-count mono"><b data-current>1</b>/{{ p.images|length }}</span>
+            <div class="slider-dots">
+              {% for img in p.images %}
+              <button type="button" class="dot{% if loop.first %} is-active{% endif %}" aria-label="Show preview {{ loop.index }}"></button>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="slider-bar"><span></span></div>
+        </div>
+        <div class="project-body">
+        <div class="project-top">
+          <h3>{{ p.title }}</h3>
+          <span class="tag">{{ p.category }}</span>
+        </div>
+        <p>{{ p.description }}</p>
+        <div class="stack-list">
+          {% for tech in p.stack %}
+          <span class="stack-pill mono">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Skills</div>
+      <h2>Tools I operate in</h2>
+      <p>Grouped by where they sit in the stack, from provisioning to production visibility.</p>
+    </div>
+
+    <div class="skill-grid">
+      {% for group in skills %}
+      <div class="skill-cell">
+        <h4>{{ group.group }}</h4>
+        <ul>
+          {% for item in group.tools %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Certifications</div>
+      <h2>Validated by AWS</h2>
+    </div>
+    <div class="cert-strip">
+      {% for c in certifications %}
+      <div class="cert-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg>
+        <span>{{ c }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resume-download" style="border-bottom: none;">
+  <div class="container">
+    <div class="resume-panel">
+      <div class="resume-info">
+        <span class="resume-file-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+        <div>
+          <h3>Full resume, one click away</h3>
+          <p>Ashish_Gurav_DevOps_Resume.pdf</p>
+        </div>
+      </div>
+      <a href="/resume" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <div class="section-label">Contact</div>
+        <h2>Start a conversation.</h2>
+        <p>I build systems for the long haul. Whether you need someone to stabilize an environment, automate the manual work away, or stand up new infrastructure — let's talk about what that looks like.</p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <span class="contact-info-label mono">Email</span>
+            <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label mono">Location</span>
+            <span>{{ profile.location }}</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label mono">Connect</span>
+            <a href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="{{ profile.github }}" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="form-row">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name">
+        </div>
+
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email">
+        </div>
+
+        <div class="form-row">
+          <label for="cf-subject">Subject</label>
+          <select id="cf-subject" name="subject">
+            <option>General Inquiry</option>
+            <option>Project Discussion</option>
+            <option>Partnership</option>
+            <option>Career Opportunity</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit" id="cfSubmit">
+          Send message
+        </button>
+
+        <p class="form-status" id="cfStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>&copy; <span id="year"></span> {{ profile.name }}</span>
+    <span class="footer-social">
+      <a href="{{ profile.github }}" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+      <a href="{{ profile.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+    </span>
+    <span>Built with Flask · Deployed with Docker</span>
+  </div>
+</footer>
+
+<div class="chat-widget" id="chatWidget">
+  <button class="chat-fab" id="chatFab" aria-expanded="false" aria-controls="chatPanel">
+    <svg class="chat-fab-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <svg class="chat-fab-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Ask about {{ profile.name }}">
+    <div class="chat-panel-head">
+      <div>
+        <div class="chat-panel-title">Ask about {{ profile.name.split(' ')[0] }}</div>
+        <div class="chat-panel-sub mono"><span class="status-dot" style="margin-right:6px;"></span>AI assistant</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg chat-msg-assistant">
+        Hi, I can answer questions about {{ profile.name.split(' ')[0] }}'s skills, services, and availability — ask away.
+      </div>
+    </div>
+    <form class="chat-input-row" id="chatForm">
+      <input type="text" id="chatInput" placeholder="e.g. Does he work with Terraform?" autocomplete="off" maxlength="600">
+      <button type="submit" class="chat-send" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
