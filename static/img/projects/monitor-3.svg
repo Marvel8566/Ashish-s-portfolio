@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="ui-monospace,SFMono-Regular,Consolas,Menlo,monospace">
+<defs><pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#141a22" stroke-width="1"/></pattern>
+<radialGradient id="glow" cx="80%" cy="0%" r="70%"><stop offset="0" stop-color="#f5a623" stop-opacity=".16"/><stop offset="1" stop-color="#f5a623" stop-opacity="0"/></radialGradient></defs>
+<rect width="640" height="360" fill="#0a0d12"/><rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#glow)"/>
+<rect x="24" y="22" width="592" height="316" rx="8" fill="#10151c" stroke="#232b36"/>
+<path d="M24 62H616" stroke="#232b36"/>
+<circle cx="44" cy="42" r="4.5" fill="#f37373"/><circle cx="60" cy="42" r="4.5" fill="#f5a623"/><circle cx="76" cy="42" r="4.5" fill="#34d399"/>
+<text x="320" y="46" text-anchor="middle" font-size="12" fill="#5c6675">kubectl · pod status</text>
+<text x="46" y="94" font-size="12" xml:space="preserve"><tspan fill="#5c6675">$ </tspan><tspan fill="#e7ecf2">kubectl get pods -n prod</tspan></text>
+<text x="46" y="116" font-size="12" xml:space="preserve"><tspan fill="#5c6675">NAME                     READY  STATUS     AGE</tspan></text>
+<text x="46" y="138" font-size="12" xml:space="preserve"><tspan fill="#e7ecf2">payments-7f9c-x2k      </tspan><tspan fill="#34d399">1/1    Running    </tspan><tspan fill="#8d98a6">4d</tspan></text>
+<text x="46" y="160" font-size="12" xml:space="preserve"><tspan fill="#e7ecf2">accounts-5d8b-q7m      </tspan><tspan fill="#34d399">1/1    Running    </tspan><tspan fill="#8d98a6">4d</tspan></text>
+<text x="46" y="182" font-size="12" xml:space="preserve"><tspan fill="#e7ecf2">ledger-6c4a-9pw        </tspan><tspan fill="#34d399">1/1    Running    </tspan><tspan fill="#8d98a6">2d</tspan></text>
+<text x="46" y="204" font-size="12" xml:space="preserve"><tspan fill="#e7ecf2">notify-8b2d-t5r        </tspan><tspan fill="#f5a623">0/1    </tspan><tspan fill="#f5a623">Pending    </tspan><tspan fill="#8d98a6">3m</tspan></text>
+<text x="46" y="226" font-size="12" xml:space="preserve"><tspan fill="#e7ecf2">reports-3a7f-m1c       </tspan><tspan fill="#34d399">1/1    Running    </tspan><tspan fill="#8d98a6">6d</tspan></text>
+<text x="46" y="248" font-size="12" xml:space="preserve"><tspan fill="#e7ecf2"></tspan></text>
+<text x="46" y="270" font-size="12" xml:space="preserve"><tspan fill="#5c6675">$ </tspan><tspan fill="#e7ecf2">kubectl describe pod notify-8b2d-t5r | tail -3</tspan></text>
+<text x="46" y="292" font-size="12" xml:space="preserve"><tspan fill="#f5a623">  Warning </tspan><tspan fill="#8d98a6">FailedScheduling: insufficient memory → scaling node pool</tspan></text></svg>

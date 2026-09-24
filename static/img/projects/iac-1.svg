@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="ui-monospace,SFMono-Regular,Consolas,Menlo,monospace">
+<defs><pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#141a22" stroke-width="1"/></pattern>
+<radialGradient id="glow" cx="80%" cy="0%" r="70%"><stop offset="0" stop-color="#f5a623" stop-opacity=".16"/><stop offset="1" stop-color="#f5a623" stop-opacity="0"/></radialGradient></defs>
+<rect width="640" height="360" fill="#0a0d12"/><rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#glow)"/>
+<rect x="24" y="22" width="592" height="316" rx="8" fill="#10151c" stroke="#232b36"/>
+<path d="M24 62H616" stroke="#232b36"/>
+<circle cx="44" cy="42" r="4.5" fill="#f37373"/><circle cx="60" cy="42" r="4.5" fill="#f5a623"/><circle cx="76" cy="42" r="4.5" fill="#34d399"/>
+<text x="320" y="46" text-anchor="middle" font-size="12" fill="#5c6675">main.tf</text>
+<text x="46" y="92" font-size="12.5" xml:space="preserve"><tspan fill="#4c8dff">module </tspan><tspan fill="#34d399">&quot;network&quot; </tspan><tspan fill="#e7ecf2">{</tspan></text>
+<text x="46" y="112" font-size="12.5" xml:space="preserve"><tspan fill="#8d98a6">  source   = </tspan><tspan fill="#34d399">&quot;./modules/vpc&quot;</tspan></text>
+<text x="46" y="132" font-size="12.5" xml:space="preserve"><tspan fill="#8d98a6">  cidr     = </tspan><tspan fill="#34d399">&quot;10.0.0.0/16&quot;</tspan></text>
+<text x="46" y="152" font-size="12.5" xml:space="preserve"><tspan fill="#8d98a6">  azs      = </tspan><tspan fill="#34d399">[&quot;ap-south-1a&quot;, &quot;ap-south-1b&quot;]</tspan></text>
+<text x="46" y="172" font-size="12.5" xml:space="preserve"><tspan fill="#e7ecf2">}</tspan></text>
+<text x="46" y="192" font-size="12.5" xml:space="preserve"><tspan fill="#e7ecf2"></tspan></text>
+<text x="46" y="212" font-size="12.5" xml:space="preserve"><tspan fill="#4c8dff">resource </tspan><tspan fill="#34d399">&quot;aws_instance&quot; &quot;app&quot; </tspan><tspan fill="#e7ecf2">{</tspan></text>
+<text x="46" y="232" font-size="12.5" xml:space="preserve"><tspan fill="#8d98a6">  ami           = </tspan><tspan fill="#f5a623">var.ami_id</tspan></text>
+<text x="46" y="252" font-size="12.5" xml:space="preserve"><tspan fill="#8d98a6">  instance_type = </tspan><tspan fill="#f5a623">var.instance_type</tspan></text>
+<text x="46" y="272" font-size="12.5" xml:space="preserve"><tspan fill="#8d98a6">  subnet_id     = </tspan><tspan fill="#f5a623">module.network.private[0]</tspan></text>
+<text x="46" y="292" font-size="12.5" xml:space="preserve"><tspan fill="#8d98a6">  tags          = </tspan><tspan fill="#f5a623">local.common_tags</tspan></text>
+<text x="46" y="312" font-size="12.5" xml:space="preserve"><tspan fill="#e7ecf2">}</tspan></text></svg>

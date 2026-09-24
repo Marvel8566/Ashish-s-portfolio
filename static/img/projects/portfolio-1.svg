@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="ui-monospace,SFMono-Regular,Consolas,Menlo,monospace">
+<defs><pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#141a22" stroke-width="1"/></pattern>
+<radialGradient id="glow" cx="80%" cy="0%" r="70%"><stop offset="0" stop-color="#f5a623" stop-opacity=".16"/><stop offset="1" stop-color="#f5a623" stop-opacity="0"/></radialGradient></defs>
+<rect width="640" height="360" fill="#0a0d12"/><rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#glow)"/>
+<rect x="24" y="22" width="592" height="316" rx="8" fill="#10151c" stroke="#232b36"/>
+<path d="M24 62H616" stroke="#232b36"/>
+<circle cx="44" cy="42" r="4.5" fill="#f37373"/><circle cx="60" cy="42" r="4.5" fill="#f5a623"/><circle cx="76" cy="42" r="4.5" fill="#34d399"/>
+<text x="320" y="46" text-anchor="middle" font-size="12" fill="#5c6675">GET /api/projects</text>
+<text x="46" y="96" font-size="12.5" xml:space="preserve"><tspan fill="#e7ecf2">{</tspan></text>
+<text x="46" y="120" font-size="12.5" xml:space="preserve"><tspan fill="#4c8dff">  &quot;title&quot;: </tspan><tspan fill="#34d399">&quot;Cloud Automation Workflows&quot;</tspan><tspan fill="#e7ecf2">,</tspan></text>
+<text x="46" y="144" font-size="12.5" xml:space="preserve"><tspan fill="#4c8dff">  &quot;category&quot;: </tspan><tspan fill="#34d399">&quot;Automation&quot;</tspan><tspan fill="#e7ecf2">,</tspan></text>
+<text x="46" y="168" font-size="12.5" xml:space="preserve"><tspan fill="#4c8dff">  &quot;stack&quot;: </tspan><tspan fill="#34d399">[&quot;AWS&quot;, &quot;Azure&quot;, &quot;Python&quot;]</tspan><tspan fill="#e7ecf2">,</tspan></text>
+<text x="46" y="192" font-size="12.5" xml:space="preserve"><tspan fill="#4c8dff">  &quot;images&quot;: </tspan><tspan fill="#34d399">[&quot;automation-1.svg&quot;, …]</tspan></text>
+<text x="46" y="216" font-size="12.5" xml:space="preserve"><tspan fill="#e7ecf2">}</tspan></text>
+<text x="46" y="240" font-size="12.5" xml:space="preserve"><tspan fill="#e7ecf2"></tspan></text>
+<text x="46" y="264" font-size="12.5" xml:space="preserve"><tspan fill="#5c6675">HTTP/1.1 </tspan><tspan fill="#34d399">200 OK</tspan><tspan fill="#5c6675">  ·  application/json</tspan></text>
+<text x="46" y="288" font-size="12.5" xml:space="preserve"><tspan fill="#5c6675">GET /health  →  </tspan><tspan fill="#34d399">{&quot;status&quot;: &quot;ok&quot;}</tspan></text></svg>
